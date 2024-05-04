@@ -1,5 +1,6 @@
 const UI = {
-    booksDiv : document.querySelector('.books')
+    booksDiv : document.querySelector('.books'),
+    addButton : document.querySelector('.addButton')
 };
 
 const myLibrary = [];
@@ -41,6 +42,37 @@ function displayBooks(){
         UI.booksDiv.appendChild(bookCard);
     }
 }
+
+UI.addButton.addEventListener('click', (e) => {
+
+    let newBook = document.createElement('form');
+    newBook.classList.add('newBook');
+    newBook.setAttribute('method', 'dialog');
+
+    let title = document.createElement('input');
+    title.setAttribute('type', 'text');
+    title.setAttribute('value', 'Title');
+
+    let author = document.createElement('input');
+    author.setAttribute('type', 'text');
+    author.setAttribute('value', 'Author');
+
+    let pages = document.createElement('input');
+    pages.setAttribute('type', 'numbers');
+    pages.setAttribute('value', 'Pages');
+
+    let submit = document.createElement('input');
+    submit.setAttribute('type', 'submit');
+    submit.setAttribute('value', 'Add Book');
+
+    newBook.appendChild(title);
+    newBook.appendChild(author);
+    newBook.appendChild(pages);
+    newBook.appendChild(submit);
+
+    UI.booksDiv.appendChild(newBook);
+
+});
 
 addBookToLibrary('Book 1', 'Cool Guy', 399);
 addBookToLibrary('Book 2', 'Cool Guy', 399);
