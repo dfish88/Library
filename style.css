@@ -34,6 +34,8 @@ p{
 }
 
 .bookCard{
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr;
     background-color: whitesmoke;
     border-radius: 12px;
 }
