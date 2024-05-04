@@ -1,0 +1,30 @@
+:root{
+    --gradient1 : red;
+    --gradient2 : orange;
+}
+
+body{
+    margin: 0;
+}
+
+p{
+    margin: 0;
+}
+
+.header{
+    display: flex;
+    background-image: linear-gradient(var(--gradient1), var(--gradient2));
+    justify-content: start;
+    padding: 2%;
+    padding-left: 5%;
+}
+
+.header p{
+    font-size: 200%;
+    font-weight: bold;
+}
+
+.books{
+    display : grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
