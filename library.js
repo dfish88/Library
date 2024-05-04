@@ -32,7 +32,7 @@ function displayBooks(){
         let author = document.createElement('p');
         author.innerText = myLibrary[index].author;
         let pages = document.createElement('p');
-        pages.innerText = myLibrary[index].pages;
+        pages.innerText = myLibrary[index].pages + ' pages';
 
         bookCard.appendChild(title);
         bookCard.appendChild(author);
