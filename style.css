@@ -1,11 +1,13 @@
 :root{
-    --gradient1 : red;
-    --gradient2 : rgb(243, 187, 83);
-    --background : rgb(252, 219, 211);
+    --header: rgb(160, 251, 198);
+    --background1 : rgb(252, 219, 211);
+    --background2 : rgb(244, 202, 154);
 }
 
 body{
+    height: 100vh;
     margin: 0;
+    background-image: linear-gradient(var(--background1), var(--background2));
     background-color: var(--background);
 }
 
@@ -15,7 +17,7 @@ p{
 
 .header{
     display: flex;
-    background-image: linear-gradient(var(--gradient1), var(--gradient2));
+    background-color: var(--header);
     justify-content: start;
     padding: 2%;
     padding-left: 5%;
@@ -36,6 +38,15 @@ p{
 .bookCard{
     display: grid;
     grid-template-rows: 2fr 1fr 1fr;
-    background-color: whitesmoke;
+    background-color: rgb(255, 244, 244);
     border-radius: 12px;
+}
+
+.bookCard p:first-child {
+    font-size: 125%;
+    font-weight: bold;
+}
+
+.bookCard p:last-child{
+    font-size: 80%;
 }
