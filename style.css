@@ -30,8 +30,10 @@ p{
     display : grid;
     gap: 2%;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    padding: 2%;
 }
 
 .bookCard{
     background-color: whitesmoke;
+    border-radius: 12px;
 }
