@@ -27,6 +27,7 @@ function displayBook(index){
 
     let bookCard = document.createElement('div');
     bookCard.classList.add('bookCard');
+    bookCard.setAttribute('data-index', index);
 
     let title = document.createElement('p');
     title.innerText = myLibrary[index].title;
