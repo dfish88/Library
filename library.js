@@ -3,7 +3,7 @@ const UI = {
     addButton : document.querySelector('.addButton')
 };
 
-const myLibrary = [];
+const myLibrary = {};
 
 function Book(title, author, pages){
 
@@ -20,26 +20,29 @@ function Book(title, author, pages){
 
 function addBookToLibrary(title, author, pages){
     var newBook = new Book(title, author, pages);
-    myLibrary.push(newBook);
-    return newBook.id;
+    var id = newBook.id;
+    myLibrary[id] = newBook;
+    return id;
 }
 
-function removeBookFromLibrary(index, bookCard){
+function removeBookFromLibrary(id, bookCard){
+    myLibrary.remove(id);
+    bookCard.remove();
 
 }
 
-function displayBook(index){
+function displayBook(id){
 
     let bookCard = document.createElement('div');
     bookCard.classList.add('bookCard');
-    bookCard.setAttribute('data-index', index);
+    bookCard.setAttribute('data-id', id);
 
     let remove = document.createElement('img');
     remove.src = './icons/minus.png';
     remove.classList.add('removeButton');
 
     let title = document.createElement('p');
-    title.innerText = myLibrary[index].title;
+    title.innerText = myLibrary[id].title;
 
     let titleDiv = document.createElement('div');
     titleDiv.classList.add('titleDiv');
@@ -47,10 +50,10 @@ function displayBook(index){
     titleDiv.appendChild(remove);
 
     let author = document.createElement('p');
-    author.innerText = myLibrary[index].author;
+    author.innerText = myLibrary[id].author;
 
     let pages = document.createElement('p');
-    pages.innerText = myLibrary[index].pages + ' pages';
+    pages.innerText = myLibrary[id].pages + ' pages';
 
     bookCard.appendChild(titleDiv);
     bookCard.appendChild(author);
@@ -60,8 +63,8 @@ function displayBook(index){
 }
 
 function displayBooks(){
-    for (const index in myLibrary){
-        displayBook(index)
+    for (const id in myLibrary){
+        displayBook(id)
     }
 }
 
@@ -75,7 +78,7 @@ function submitNewBookForm(event, titleInput, authorInput, pagesInput, form){
 
     let id = addBookToLibrary(title, author, pages);
 
-    displayBook(index);
+    displayBook(id);
 
     form.remove();
     UI.addButton.style.visibility = 'visible';
