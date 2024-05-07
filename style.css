@@ -65,6 +65,11 @@ p{
     height: 50px;
 }
 
+.titleDiv{
+    display: grid;
+    grid-template-columns: 2fr 0.5fr;
+}
+
 .removeButton{
     width: 25px;
     height: 25px;
