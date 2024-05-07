@@ -11,6 +11,7 @@ function Book(title, author, pages){
     this.author = author;
     this.pages = pages;
     this.read = false;
+    this.id = crypto.randomUUID();
 
     this.info = function() {
         return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? 'already read.' : 'not read yet.'}`;
@@ -20,7 +21,11 @@ function Book(title, author, pages){
 function addBookToLibrary(title, author, pages){
     var newBook = new Book(title, author, pages);
     myLibrary.push(newBook);
-    return myLibrary.length - 1;
+    return newBook.id;
+}
+
+function removeBookFromLibrary(index, bookCard){
+
 }
 
 function displayBook(index){
@@ -68,7 +73,7 @@ function submitNewBookForm(event, titleInput, authorInput, pagesInput, form){
     let author = authorInput.innerText;
     let pages = pagesInput.innerText;
 
-    let index = addBookToLibrary(title, author, pages);
+    let id = addBookToLibrary(title, author, pages);
 
     displayBook(index);
 
