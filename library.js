@@ -25,12 +25,6 @@ function addBookToLibrary(title, author, pages){
     return id;
 }
 
-function removeBookFromLibrary(id, bookCard){
-    myLibrary.remove(id);
-    bookCard.remove();
-
-}
-
 function displayBook(id){
 
     let bookCard = document.createElement('div');
@@ -40,6 +34,10 @@ function displayBook(id){
     let remove = document.createElement('img');
     remove.src = './icons/minus.png';
     remove.classList.add('removeButton');
+    remove.addEventListener('click', (e) =>{
+        delete myLibrary[id];
+        bookCard.remove();
+    });
 
     let title = document.createElement('p');
     title.innerText = myLibrary[id].title;
