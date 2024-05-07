@@ -43,21 +43,42 @@ function displayBooks(){
     }
 }
 
+function submitNewBookForm(event, titleInput, authorInput, pagesInput, form){
+
+    let title = titleInput.innerText;
+    let author = authorInput.innerText;
+    let pages = pagesInput.innerText;
+
+
+
+    addBookToLibrary(title, author, pages);
+
+    form.remove();
+    UI.addButton.style.visibility = 'visible';
+    //displayBooks();
+
+
+
+    event.preventDefault();
+}
+
 UI.addButton.addEventListener('click', (e) => {
 
     let newBook = document.createElement('form');
     newBook.classList.add('newBook');
-    newBook.setAttribute('method', 'dialog');
 
     let title = document.createElement('input');
+    title.classList.add('titleInput');
     title.setAttribute('type', 'text');
     title.setAttribute('value', 'Title');
 
     let author = document.createElement('input');
+    author.classList.add('authorInput');
     author.setAttribute('type', 'text');
     author.setAttribute('value', 'Author');
 
     let pages = document.createElement('input');
+    pages.classList.add('pagesInput');
     pages.setAttribute('type', 'numbers');
     pages.setAttribute('value', 'Pages');
 
@@ -70,7 +91,13 @@ UI.addButton.addEventListener('click', (e) => {
     newBook.appendChild(pages);
     newBook.appendChild(submit);
 
+    newBook.addEventListener('submit', (e) => {
+        submitNewBookForm(e, title, author, pages);
+    });
+
     UI.booksDiv.appendChild(newBook);
+
+    UI.addButton.style.visibility = 'hidden';
 
 });
 
