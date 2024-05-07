@@ -20,6 +20,7 @@ function Book(title, author, pages){
 function addBookToLibrary(title, author, pages){
     var newBook = new Book(title, author, pages);
     myLibrary.push(newBook);
+    return myLibrary.length - 1;
 }
 
 function displayBook(index){
@@ -49,18 +50,19 @@ function displayBooks(){
 
 function submitNewBookForm(event, titleInput, authorInput, pagesInput, form){
 
+    event.preventDefault();
+
     let title = titleInput.innerText;
     let author = authorInput.innerText;
     let pages = pagesInput.innerText;
 
+    let index = addBookToLibrary(title, author, pages);
 
-
-    addBookToLibrary(title, author, pages);
+    displayBook(index);
 
     form.remove();
     UI.addButton.style.visibility = 'visible';
 
-    event.preventDefault();
 }
 
 UI.addButton.addEventListener('click', (e) => {
@@ -93,7 +95,7 @@ UI.addButton.addEventListener('click', (e) => {
     newBook.appendChild(submit);
 
     newBook.addEventListener('submit', (e) => {
-        submitNewBookForm(e, title, author, pages);
+        submitNewBookForm(e, title, author, pages, newBook);
     });
 
     UI.booksDiv.appendChild(newBook);
