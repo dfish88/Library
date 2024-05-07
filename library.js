@@ -29,14 +29,25 @@ function displayBook(index){
     bookCard.classList.add('bookCard');
     bookCard.setAttribute('data-index', index);
 
+    let remove = document.createElement('img');
+    remove.src = './icons/minus.png';
+    remove.classList.add('removeButton');
+
     let title = document.createElement('p');
     title.innerText = myLibrary[index].title;
+
+    let titleDiv = document.createElement('div');
+    titleDiv.classList.add('titleDiv');
+    titleDiv.appendChild(title);
+    titleDiv.appendChild(remove);
+
     let author = document.createElement('p');
     author.innerText = myLibrary[index].author;
+
     let pages = document.createElement('p');
     pages.innerText = myLibrary[index].pages + ' pages';
 
-    bookCard.appendChild(title);
+    bookCard.appendChild(titleDiv);
     bookCard.appendChild(author);
     bookCard.appendChild(pages);
 
