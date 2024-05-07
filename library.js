@@ -22,24 +22,28 @@ function addBookToLibrary(title, author, pages){
     myLibrary.push(newBook);
 }
 
+function displayBook(index){
+
+    let bookCard = document.createElement('div');
+    bookCard.classList.add('bookCard');
+
+    let title = document.createElement('p');
+    title.innerText = myLibrary[index].title;
+    let author = document.createElement('p');
+    author.innerText = myLibrary[index].author;
+    let pages = document.createElement('p');
+    pages.innerText = myLibrary[index].pages + ' pages';
+
+    bookCard.appendChild(title);
+    bookCard.appendChild(author);
+    bookCard.appendChild(pages);
+
+    UI.booksDiv.appendChild(bookCard);
+}
+
 function displayBooks(){
     for (const index in myLibrary){
-
-        let bookCard = document.createElement('div');
-        bookCard.classList.add('bookCard');
-
-        let title = document.createElement('p');
-        title.innerText = myLibrary[index].title;
-        let author = document.createElement('p');
-        author.innerText = myLibrary[index].author;
-        let pages = document.createElement('p');
-        pages.innerText = myLibrary[index].pages + ' pages';
-
-        bookCard.appendChild(title);
-        bookCard.appendChild(author);
-        bookCard.appendChild(pages);
-
-        UI.booksDiv.appendChild(bookCard);
+        displayBook(index)
     }
 }
 
@@ -55,9 +59,6 @@ function submitNewBookForm(event, titleInput, authorInput, pagesInput, form){
 
     form.remove();
     UI.addButton.style.visibility = 'visible';
-    //displayBooks();
-
-
 
     event.preventDefault();
 }
