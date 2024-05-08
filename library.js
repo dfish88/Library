@@ -65,9 +65,14 @@ function displayBook(id){
     readIcon.setAttribute('src', './icons/checkmark.png')
     readIcon.classList.add('readIcon')
 
-    readButton.appendChild(readIcon);
+    readIcon.style.visibility = myLibrary[id].read ? 'visible' : 'hidden';
 
-    //read.checked = myLibrary[id].read;
+    readButton.addEventListener('click', (e)=>{
+        myLibrary[id].readToggle();
+        readIcon.style.visibility = myLibrary[id].read ? 'visible' : 'hidden';
+    })
+
+    readButton.appendChild(readIcon);
 
     bookCard.appendChild(titleDiv);
     bookCard.appendChild(author);
