@@ -60,6 +60,13 @@ function displayBook(id){
     let readButton = document.createElement('button');
     readButton.classList.add('readButton');
     readButton.innerText = 'Read?';
+
+    let readIcon = document.createElement('img');
+    readIcon.setAttribute('src', './icons/checkmark.png')
+    readIcon.classList.add('readIcon')
+
+    readButton.appendChild(readIcon);
+
     //read.checked = myLibrary[id].read;
 
     bookCard.appendChild(titleDiv);
