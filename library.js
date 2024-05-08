@@ -18,6 +18,10 @@ function Book(title, author, pages){
     }
 }
 
+Book.prototype.readToggle = function () {
+    this.read = !this.read;
+}
+
 function addBookToLibrary(title, author, pages){
     var newBook = new Book(title, author, pages);
     var id = newBook.id;
