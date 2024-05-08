@@ -57,25 +57,15 @@ function displayBook(id){
     let pages = document.createElement('p');
     pages.innerText = myLibrary[id].pages + ' pages';
 
-    let read = document.createElement('input');
-    read.setAttribute('type', 'checkbox');
-    read.setAttribute('id', 'readCheckbox');
-    read.checked = myLibrary[id].read;
-
-    let readLabel = document.createElement('label');
-    readLabel.setAttribute('for', 'readCheckbox')
-    readLabel.innerText = 'Read?'
-
-    let readDiv = document.createElement('div');
-    readDiv.classList.add('readDiv');
-    readDiv.appendChild(read);
-    readDiv.appendChild(readLabel);
+    let readButton = document.createElement('button');
+    readButton.classList.add('readButton');
+    readButton.innerText = 'Read?';
+    //read.checked = myLibrary[id].read;
 
     bookCard.appendChild(titleDiv);
     bookCard.appendChild(author);
     bookCard.appendChild(pages);
-    bookCard.appendChild(read);
-    bookCard.appendChild(readDiv);
+    bookCard.appendChild(readButton);
 
     UI.booksDiv.appendChild(bookCard);
 }
