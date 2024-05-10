@@ -88,13 +88,14 @@ function displayBooks(){
     }
 }
 
-function submitNewBookForm(event, titleInput, authorInput, pagesInput, form){
-
+function submitNewBookForm(event){
     event.preventDefault();
 
-    let title = titleInput.innerText;
-    let author = authorInput.innerText;
-    let pages = pagesInput.innerText;
+    let form = document.querySelector('.newBook');
+
+    let title = document.querySelector('.titleInput').value;
+    let author = document.querySelector('.authorInput').value;
+    let pages = document.querySelector('.pagesInput').value; 
 
     let id = addBookToLibrary(title, author, pages);
 
@@ -109,6 +110,7 @@ UI.addButton.addEventListener('click', (e) => {
 
     let newBook = document.createElement('form');
     newBook.classList.add('newBook');
+    newBook.setAttribute('onsubmit', 'submitNewBookForm(event)');
 
     let title = document.createElement('input');
     title.classList.add('titleInput');
@@ -124,22 +126,18 @@ UI.addButton.addEventListener('click', (e) => {
 
     let pages = document.createElement('input');
     pages.classList.add('pagesInput');
-    pages.setAttribute('type', 'numbers');
+    pages.setAttribute('type', 'number');
     pages.setAttribute('value', 'Pages');
     pages.required = true;
 
-    let submit = document.createElement('input');
+    let submit = document.createElement('button');
     submit.setAttribute('type', 'submit');
-    submit.setAttribute('value', 'Add Book');
+    submit.innerText = 'Add Book';
 
     newBook.appendChild(title);
     newBook.appendChild(author);
     newBook.appendChild(pages);
     newBook.appendChild(submit);
-
-    newBook.addEventListener('submit', (e) => {
-        submitNewBookForm(e, title, author, pages, newBook);
-    });
 
     UI.booksDiv.appendChild(newBook);
 
