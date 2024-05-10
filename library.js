@@ -93,9 +93,9 @@ function submitNewBookForm(event){
 
     let form = document.querySelector('.newBook');
 
-    let title = document.querySelector('.titleInput').value;
-    let author = document.querySelector('.authorInput').value;
-    let pages = document.querySelector('.pagesInput').value; 
+    let title = document.querySelector('#titleInput').value;
+    let author = document.querySelector('#authorInput').value;
+    let pages = document.querySelector('#pagesInput').value; 
 
     let id = addBookToLibrary(title, author, pages);
 
@@ -112,26 +112,41 @@ function createNewBookForm(){
     newBook.setAttribute('onsubmit', 'submitNewBookForm(event)');
 
     let title = document.createElement('input');
-    title.classList.add('titleInput');
+    title.id = 'titleInput';
     title.setAttribute('type', 'text');
     title.required = true;
 
+    let titleLabel = document.createElement('label');
+    titleLabel.innerText = 'Title';
+    titleLabel.setAttribute('for', 'titleInput');
+
     let author = document.createElement('input');
-    author.classList.add('authorInput');
+    author.id ='authorInput';
     author.setAttribute('type', 'text');
     author.required = true;
 
+    let authorLabel = document.createElement('label');
+    authorLabel.innerText = 'Author';
+    authorLabel.setAttribute('for', 'authorInput');
+
     let pages = document.createElement('input');
-    pages.classList.add('pagesInput');
+    pages.id = 'pagesInput';
     pages.setAttribute('type', 'number');
     pages.required = true;
+
+    let pagesLabel = document.createElement('label');
+    pagesLabel.innerText = 'Pages';
+    pagesLabel.setAttribute('for', 'pagesInput');
 
     let submit = document.createElement('button');
     submit.setAttribute('type', 'submit');
     submit.innerText = 'Add Book';
 
+    newBook.appendChild(titleLabel);
     newBook.appendChild(title);
+    newBook.appendChild(authorLabel);
     newBook.appendChild(author);
+    newBook.appendChild(pagesLabel);
     newBook.appendChild(pages);
     newBook.appendChild(submit);
 
