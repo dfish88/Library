@@ -30,8 +30,9 @@ p{
 
 .books{
     display : grid;
-    gap: 2%;
+    gap: 20px;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
     grid-auto-rows: 1fr;
     padding: 2%;
 }
