@@ -114,16 +114,19 @@ UI.addButton.addEventListener('click', (e) => {
     title.classList.add('titleInput');
     title.setAttribute('type', 'text');
     title.setAttribute('value', 'Title');
+    title.required = true;
 
     let author = document.createElement('input');
     author.classList.add('authorInput');
     author.setAttribute('type', 'text');
     author.setAttribute('value', 'Author');
+    author.required = true;
 
     let pages = document.createElement('input');
     pages.classList.add('pagesInput');
     pages.setAttribute('type', 'numbers');
     pages.setAttribute('value', 'Pages');
+    pages.required = true;
 
     let submit = document.createElement('input');
     submit.setAttribute('type', 'submit');
