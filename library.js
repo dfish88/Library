@@ -106,8 +106,7 @@ function submitNewBookForm(event){
 
 }
 
-UI.addButton.addEventListener('click', (e) => {
-
+function createNewBookForm(){
     let newBook = document.createElement('form');
     newBook.classList.add('newBook');
     newBook.setAttribute('onsubmit', 'submitNewBookForm(event)');
@@ -115,19 +114,16 @@ UI.addButton.addEventListener('click', (e) => {
     let title = document.createElement('input');
     title.classList.add('titleInput');
     title.setAttribute('type', 'text');
-    title.setAttribute('value', 'Title');
     title.required = true;
 
     let author = document.createElement('input');
     author.classList.add('authorInput');
     author.setAttribute('type', 'text');
-    author.setAttribute('value', 'Author');
     author.required = true;
 
     let pages = document.createElement('input');
     pages.classList.add('pagesInput');
     pages.setAttribute('type', 'number');
-    pages.setAttribute('value', 'Pages');
     pages.required = true;
 
     let submit = document.createElement('button');
@@ -139,8 +135,13 @@ UI.addButton.addEventListener('click', (e) => {
     newBook.appendChild(pages);
     newBook.appendChild(submit);
 
-    UI.booksDiv.appendChild(newBook);
+    return newBook;
+}
 
+UI.addButton.addEventListener('click', (e) => {
+
+    let newBook = createNewBookForm();
+    UI.booksDiv.appendChild(newBook);
     UI.addButton.style.visibility = 'hidden';
 
 });
