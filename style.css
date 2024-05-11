@@ -79,7 +79,11 @@ p{
 
 .readButton{
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
+}
+
+.readButton span{
+    justify-self: end;
 }
 
 .readIcon{
