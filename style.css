@@ -32,7 +32,7 @@ p{
     display : grid;
     gap: 20px;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(275px, 1fr));
     grid-auto-rows: 1fr;
     padding: 2%;
 }
@@ -91,6 +91,7 @@ p{
 .newBook{
     display: grid;
     grid-template-columns: 1fr;
+    row-gap: 4%;
     background-color: whitesmoke;
     border-radius: 12px;
     padding: 5%;
