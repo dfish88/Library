@@ -88,6 +88,21 @@ p{
     place-self: center;
 }
 
+.newBook{
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: whitesmoke;
+    border-radius: 12px;
+    padding: 5%;
+}
+
+.newBook input{
+    width: 100%; 
+    box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+}
+
 .buttonDiv{
     display: grid;
     grid-template-columns: 1fr 1fr;
