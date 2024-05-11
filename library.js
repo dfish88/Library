@@ -142,13 +142,26 @@ function createNewBookForm(){
     submit.setAttribute('type', 'submit');
     submit.innerText = 'Add Book';
 
+    let cancel = document.createElement('button');
+    cancel.innerText = 'Cancel';
+
+    cancel.addEventListener('click', (e) =>{
+        newBook.remove();
+        UI.addButton.style.visibility = 'visible';
+    });
+
+    let buttonDiv = document.createElement('div');
+    buttonDiv.classList.add('buttonDiv');
+    buttonDiv.appendChild(submit);
+    buttonDiv.appendChild(cancel);
+
     newBook.appendChild(titleLabel);
     newBook.appendChild(title);
     newBook.appendChild(authorLabel);
     newBook.appendChild(author);
     newBook.appendChild(pagesLabel);
     newBook.appendChild(pages);
-    newBook.appendChild(submit);
+    newBook.appendChild(buttonDiv);
 
     return newBook;
 }
