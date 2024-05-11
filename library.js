@@ -132,6 +132,7 @@ function createNewBookForm(){
     let pages = document.createElement('input');
     pages.id = 'pagesInput';
     pages.setAttribute('type', 'number');
+    pages.setAttribute('min', '1');
     pages.required = true;
 
     let pagesLabel = document.createElement('label');
