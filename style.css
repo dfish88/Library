@@ -48,7 +48,7 @@ button {
 .books{
     display : grid;
     gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(275px, 1fr));
     grid-auto-rows: 1fr;
     padding: 2%;
@@ -69,6 +69,15 @@ button {
 
 .bookCard p:last-child{
     font-size: 80%;
+}
+
+
+button:hover{
+    transform: scale(1.05);
+}
+
+button:active{
+    transform: translateY(2px);
 }
 
 .addButton{
