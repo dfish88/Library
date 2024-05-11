@@ -2,6 +2,7 @@
     --header: rgb(125, 248, 176);
     --background1 : rgb(252, 219, 211);
     --background2 : rgb(244, 202, 154);
+    --button-color: #a7f3d0;
 }
 
 body{
@@ -11,8 +12,22 @@ body{
     background-color: var(--background);
 }
 
+input{
+    border-radius: 8px;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
 p{
     margin: 0;
+}
+
+button {
+    border-radius: 10px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-style: none;
+    background-color: var(--button-color);
 }
 
 .header{
