@@ -87,3 +87,11 @@ p{
     height: 20px;
     place-self: center;
 }
+
+.buttonDiv{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
