@@ -1,5 +1,6 @@
 :root{
-    --header: rgb(125, 248, 176);
+    --header1: #a7f3d0;
+    --header2: #65fbb5;
     --background1 : rgb(251, 234, 230);
     --background2 : rgb(253, 214, 169);
     --button-color: #a7f3d0;
@@ -36,7 +37,7 @@ button {
     justify-content: start;
     padding: 2%;
     padding-left: 5%;
-    background-color: var(--header);
+    background-image: linear-gradient(var(--header1), var(--header2));
 }
 
 .header p{
