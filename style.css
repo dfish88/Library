@@ -1,8 +1,9 @@
 :root{
     --header: rgb(125, 248, 176);
-    --background1 : rgb(252, 219, 211);
-    --background2 : rgb(244, 202, 154);
+    --background1 : rgb(251, 234, 230);
+    --background2 : rgb(253, 214, 169);
     --button-color: #a7f3d0;
+    --shadow-color: rgb(151, 140, 137);
 }
 
 body{
@@ -87,6 +88,10 @@ button {
     grid-template-columns: 2fr 0.5fr;
 }
 
+.bookCard .titleDiv, .bookCard p{
+    padding: 5%;
+}
+
 .removeButton{
     width: 25px;
     height: 25px;
@@ -121,6 +126,10 @@ button {
     box-sizing: border-box;
     -webkit-box-sizing:border-box;
     -moz-box-sizing: border-box;
+}
+
+.bookCard, .newBook{
+    box-shadow: 5px 5px 5px var(--shadow-color);
 }
 
 .buttonDiv{
