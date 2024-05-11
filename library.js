@@ -59,7 +59,9 @@ function displayBook(id){
 
     let readButton = document.createElement('button');
     readButton.classList.add('readButton');
-    readButton.innerText = 'Read?';
+
+    let readText = document.createElement('span');
+    readText.innerText = 'Read?';
 
     let readIcon = document.createElement('img');
     readIcon.setAttribute('src', './icons/checkmark.png')
@@ -72,6 +74,7 @@ function displayBook(id){
         readIcon.style.visibility = myLibrary[id].read ? 'visible' : 'hidden';
     })
 
+    readButton.appendChild(readText);
     readButton.appendChild(readIcon);
 
     bookCard.appendChild(titleDiv);
